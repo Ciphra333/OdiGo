@@ -407,16 +407,27 @@ textarea {
     line-height: 1.2;
     font-weight: normal;
     color: #102746;
-  }
+}
 
+/* ЧИзображение не превышает размеры контейнера контейнера в котором   
+оно находится и чтобы сжималось пропорционально по высоте */
+img {
+    max-width: 100%;
+    height: auto;
+}
 
 .wrapper {
     max-width: 1060px;
     margin: 0 auto;
 }
 
+.wrapper__full {
+    max-width: 1262px;
+    margin: 0 auto;
+}
 
-/* Header styles starts */
+
+/* Header styles Starts */
 
 .header {
     position: fixed;
@@ -453,17 +464,18 @@ textarea {
 .header__link:hover, .header__link:focus, .header__link:active {
     opacity: .75;
 }
-/* Header styles end */
+/* Header styles End */
 
 
 
 
-/* Intro styles start */
+/* Intro styles Start */
 .intro {
     min-height: 100vh;
     background: url(../img/intro-bg.jpg) no-repeat center;
     background-size: cover;
     padding-top: 263px;
+    padding-bottom: 376px;
 }
 .intro__title {
     max-width: 619px;
@@ -519,4 +531,115 @@ flex-wrap: wrap;
     background-color: #16498c;
     transition: background .2s linear, color .2s linear;
 }
-/* Intro styles end */
+/* Intro styles End */
+
+
+/* Benefits styles Start */
+.benefits {
+    margin-bottom: 131px;
+}
+
+.benefits__wrap {
+    max-width: 1262px;
+    background-color: #ffffff;
+    margin: 0 auto;
+    box-shadow: 0px 2px 20px rgba(21, 24, 36, 0.15993);
+    position: relative;
+}
+.benefits__title {
+    width: 100%;
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 42px;
+    padding: 93px 100px 88px 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-100%);
+    background-color: #fff;
+}
+
+.benefits__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 55px;
+    padding: 0 100px;
+}
+.benefits__card {
+    grid-column: span 1;
+    margin-bottom: 112px;
+}
+.benefits__card-pic {
+    max-width: 66px;
+    margin-bottom: 37px;
+}
+
+.benefits__card-thumb {
+    display: block;
+}
+
+.benefits__card-title {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    color: #000;
+}
+
+.benefits__card-title {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    color: #000;
+    margin-bottom: 26px;
+}
+.benefits__card-desc {
+    margin-bottom: 39px;
+}
+
+.benefits__card-desc {
+font-weight: normal;
+font-size: 16px;
+line-height: 24px;
+}
+
+.benefits__card-more {
+    display: inline-block;
+    padding-right: 59px;
+    background: url(../img/svg/arrow-right-icon.svg) no-repeat 95% center;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: #006DFE;
+    text-decoration: none;
+    
+}
+
+.benefits__card-more:hover, .benefits__card-more:focus {
+    background: url(../img/svg/arrow-right-icon.svg) no-repeat right center;
+    transition: .2s all;
+}
+
+/* Benefits styles End */
+
+/*  Places Start */
+.section-title {
+    position: relative;
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 42px; 
+    padding-bottom: 10px;
+}
+
+.section-title::after {
+    display: block;
+    content: '';  /*  В псевдоэл-те иначе не появится на странице */
+    width: 253px;
+    height: 3px;
+    background-color: #006DFE;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+
+/*  Places End */
