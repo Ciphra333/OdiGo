@@ -419,11 +419,13 @@ img {
 .wrapper {
     max-width: 1060px;
     margin: 0 auto;
+    padding: 0 15px;
 }
 
 .wrapper__full {
     max-width: 1262px;
     margin: 0 auto;
+    padding: 0 15px;
 }
 
 
@@ -469,6 +471,32 @@ img {
 }
 .header__link:hover, .header__link:focus, .header__link:active {
     opacity: .75;
+}
+.header__burger {
+    display: none;
+    width: 40px;
+    height: 28px;
+    position: relative;
+    
+}
+.burger__line {
+    /* Span строчный эл-нт, делаем из-него блочный эл-нт */
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+
+}
+.burger__line_first {
+    top: 0;
+}
+.burger__line_second {
+    top: 50%;
+    transform: translateY(-50%);
+}
+.burger__line_third {
+    bottom: 0;
 }
 /* Header styles End */
 
@@ -922,3 +950,68 @@ transform: scale(1.05);
 }
 
 /* Footer End */
+
+/* Media Start */
+
+@media screen and (max-width:766px) {
+    .header__burger {
+        display: block;
+    }
+    .header__nav {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: #000;
+        z-index: 10;
+        padding: 75px;
+        /* burger__burger Меню уезжает за пределы экрана Вправо - 100%, если -100%, сдвигается Влево */
+        transform: translateX(100%);
+        /* Плавное выдвижение бургер меню */
+        transition: .2s all linear;
+    }
+    .header__nav_active {
+        transform: translateX(0);
+    }
+    .header__item {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+    .header__item:last-child {
+        margin-bottom: 0;
+    }
+    .header__link {
+        font-size: 42px;
+        line-height: 48px;
+    }
+    .header__nav-close {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 11;
+    }
+    .header__nav-close-line {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: #fff;
+        position: absolute;
+        top: 50%;
+        
+    }
+    /* Делаем стрелку по итогу получаем перекрестие */
+    .header__nav-close-line:first-child {
+        transform: translateY(-50%) rotate(45deg);
+    }
+    /* Делаем стрелку по итогу получаем перекрестие */
+    .header__nav-close-line:last-child {
+        transform: translateY(-50%) rotate(-45deg);
+    }
+    
+}
+
+/* Media End */
