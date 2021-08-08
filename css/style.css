@@ -772,7 +772,7 @@ transform: scale(1.05);
 .tours__tour {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 0 108px;
+    grid-gap: 108px;
     align-items: center;
     margin-bottom: 77px;
 }
@@ -818,6 +818,7 @@ transform: scale(1.05);
 .top__card {
     display: flex;
     flex-direction: column;
+    grid-column: span 2;
 }
 .top__card-pic {
     position: relative;
@@ -845,8 +846,9 @@ transform: scale(1.05);
 }
 .top__cards {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     grid-gap: 57px;
+    row-gap: 57px;
 }
 .top__card-likes {
     font-weight: 500;
@@ -953,9 +955,64 @@ transform: scale(1.05);
 
 /* Media Start */
 
-@media screen and (max-width:766px) {
+
+@media screen and (max-width:960px) {
+    .benefits {
+        margin-bottom: 75px;
+    }
+    .search-form__field {
+        margin-bottom: 25px;
+    }
+    .benefits__cards {
+        padding: 0 15px;
+        column-gap: 35px;
+    }
+    .benefits__title {
+        padding: 55px 15px;
+    }
+    .benefits__wrap {
+        box-shadow: none;
+    }
+    .places__card_size-lg {
+        grid-column: span 6;
+    }
+    .places__card_size-sm {
+        grid-column: span 6;
+    }
+    .tours__tour {
+        column-gap: 35px;
+    }
+    .tour__info {
+        padding-left: 0;
+    }
+    .tour__title {
+        margin-bottom: 35px;
+    }
+    .tour__text {
+        margin-bottom: 15px;
+    }
+    .top__card {
+        grid-column: span 3;
+    }
+    .top__cards {
+        column-gap: 25px;
+        row-gap: 55px;
+    }
+    .top__card-pic {
+        margin-bottom: 25px;
+    }
+    .footer {
+        padding: 60px 0;
+    }
+}
+
+
+@media screen and (max-width: 767px) {
     .header__burger {
         display: block;
+    }
+    .header__wrapper {
+        padding-top: 28px;
     }
     .header__nav {
         position: fixed;
@@ -1012,6 +1069,40 @@ transform: scale(1.05);
         transform: translateY(-50%) rotate(-45deg);
     }
     
+    .intro {
+        padding-top: 125px;
+    }
+    .intro__title {
+        font-size: 32px;
+        line-height: 48px;
+    }
+    .intro__subtitle {
+        font-size: 14px;
+    }
+    .search-form__field {
+        width: 100%;
+        margin-right: 0;
+        padding-bottom: 12px;
+        background: transparent url(../img/svg/circle-icon.svg) no-repeat left 2px;
+    }
+    .search-form__field::placeholder {
+        font-size: 16px;
+    }
+    .search-form__submit {
+        width: 100%;
+    }
+
+
+
+    .benefits__card {
+        grid-column: span 3;
+    }
+    
+}
+@media screen and (max-width: 500px) {
+    .header__nav {
+        padding: 75px 30px;
+    }
 }
 
 /* Media End */
